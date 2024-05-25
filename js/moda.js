@@ -1,3 +1,13 @@
+// Typed
+
+const typed = new Typed('.typed', {
+    strings: ['Ingeniera informática...','Programación...', 'Lufengu...', 'Pixel-art...', 'Deportista...'],
+    typeSpeed:45,
+    backSpeed:60,
+    loop: true
+});
+
+
 // Obtener todas las imágenes del portafolio
 const imagenesPortafolio = document.getElementsByClassName("imagen-port");
 

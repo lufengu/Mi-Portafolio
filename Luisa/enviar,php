@@ -1,0 +1,29 @@
+<?php
+// Verificar si se ha enviado el formulario
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Recoger los datos del formulario
+    $nombre = $_POST["nombre"];
+    $email = $_POST["email"];
+    $mensaje = $_POST["mensaje"];
+
+    // Destinatario del correo
+    $destinatario = "tu_email@example.com";
+
+    // Asunto del correo
+    $asunto = "Mensaje enviado desde formulario de contacto";
+
+    // Contenido del correo
+    $contenido = "Nombre: $nombre\n";
+    $contenido .= "Email: $email\n";
+    $contenido .= "Mensaje:\n$mensaje\n";
+
+    // Enviar el correo
+    $headers = "From: $nombre <$email>";
+
+    if (mail($destinatario, $asunto, $contenido, $headers)) {
+        echo "<p>¡Mensaje enviado correctamente!</p>";
+    } else {
+        echo "<p>Error al enviar el mensaje. Por favor, intenta nuevamente.</p>";
+    }
+}
+?>
